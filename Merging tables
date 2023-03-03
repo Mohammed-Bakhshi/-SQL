@@ -1,0 +1,13 @@
+--First part 
+SELECT Customers.CustomerName, Orders.OrderDate,Shippers.ShipperName,Products.ProductName -- Selecting Data that I desire 
+FROM Customers,Shippers,Products-- Getting the tables that holds the data I desire  
+CROSS JOIN Orders-- Join the Table that I want with this tables and all of its data 
+WHERE OrderDate= '1996-07-04' AND ShipperName ='United Package' ;
+
+--Second part 
+SELECT SUM(Products.Price),Products.ProductName -- Getting the data I Want and adding all product price togther 
+FROM Products-- what table to get the data from 
+CROSS JOIN Orders
+WHERE "1996"
+GROUP BY ProductName
+ORDER BY OrderDate;
